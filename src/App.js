@@ -3,17 +3,21 @@ import './App.css';
 
 function App() {
     const [seconds, setSeconds] = useState(0);
-    const [start, setStart] = useState(false);
+    const [running, setRunning] = useState(false);
     const [stop, setStop] = useState(false)
+    const [intervalID, setIntervalID] = useState(null);
     useEffect(() => {
-        if (start) {
+        if (running) {
             console.log('im here');
-            window.setInterval(() => {
-                console.log('tik tock');
+            const id = window.setInterval(() => {
+                console.log('tick');
                 setSeconds(seconds => seconds+1);
             }, 1000);
+            setIntervalID(id);
+        } else {
+            window.clearInterval(intervalID);
         }
-    }, [start]);
+    }, [running]);
 
   return (
     <div className="App">
@@ -21,10 +25,10 @@ function App() {
           <p className="Timer">{seconds}</p>
       </div>
           <div className="Buttons">
-              <button className="Play-button" onClick={() => setStart(true)}>
+              <button className="Play-button" disabled={running} onClick={() => setRunning(true)}>
                   <div className="Triangle"></div>
               </button>
-              <button className="Pause-button" onClick={() => setStart(false)}>
+              <button className="Pause-button" onClick={() => setRunning(false)}>
                 <div className="Outer-square">
                     <div className="Inner-square"></div>
                 </div>
