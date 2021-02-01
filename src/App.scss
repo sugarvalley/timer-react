@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+}
+
 .App {
   text-align: center;
   background-color: #282c34;
@@ -52,6 +56,7 @@
   margin-right: 10vh;
   border: #282c34 1vh solid;
   background: cornflowerblue;
+  cursor: pointer;
 }
 .Triangle {
   position: relative;
@@ -71,6 +76,7 @@
   margin-right: 10vh;
   border: #282c34 1vh solid;
   background: cornflowerblue;
+  cursor: pointer;
 }
 .Outer-square {
   position: relative;
@@ -94,6 +100,12 @@
   border-radius: 50%;
   border: #282c34 1vh solid;
   background: cornflowerblue;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
 }
 .Square {
   position: relative;

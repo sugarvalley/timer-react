@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from "react";
-import './App.css';
+import './App.scss';
 
 function App() {
     const [seconds, setSeconds] = useState(0);
     const [running, setRunning] = useState(false);
-    const [stop, setStop] = useState(false)
     const [intervalID, setIntervalID] = useState(null);
     useEffect(() => {
         if (running) {
@@ -37,7 +36,11 @@ function App() {
                   </button>
                   )
               }
-              <button className="Stop-button" onClick={() => setStop(true)}>
+              <button className="Stop-button" disabled={!running}
+                      onClick={() => {
+                          setRunning(false);
+                          setSeconds(0);
+                      }}>
                     <div className="Square"></div>
               </button>
           </div>
