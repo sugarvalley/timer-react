@@ -25,14 +25,18 @@ function App() {
           <p className="Timer">{seconds}</p>
       </div>
           <div className="Buttons">
-              <button className="Play-button" disabled={running} onClick={() => setRunning(true)}>
-                  <div className="Triangle"></div>
-              </button>
-              <button className="Pause-button" onClick={() => setRunning(false)}>
-                <div className="Outer-square">
-                    <div className="Inner-square"></div>
-                </div>
-              </button>
+              { running ? (
+                  <button className="Pause-button" onClick={() => setRunning(false)}>
+                      <div className="Outer-square">
+                          <div className="Inner-square"></div>
+                      </div>
+                  </button>
+                  ) : (
+                  <button className="Play-button" onClick={() => setRunning(true)}>
+                      <div className="Triangle"></div>
+                  </button>
+                  )
+              }
               <button className="Stop-button" onClick={() => setStop(true)}>
                     <div className="Square"></div>
               </button>
