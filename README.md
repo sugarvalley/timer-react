@@ -2,6 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+![](timer.gif)
 
 ## Project includes
 
@@ -11,8 +12,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
     * [x] on **website**
     * [ ] in **<title/>**
     * [ ] while using other **tab**
-* [ ] **Play** button
-* [ ] **Pause** button
+* [x] **Play** button
+* [x] **Pause** button
 * [ ] **Stop** button
 
 # CSS
