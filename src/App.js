@@ -1,15 +1,15 @@
 import React, {useState, useEffect} from "react";
+import {useDocTitle} from './customHooks';
 import './App.scss';
 
 function App() {
     const [seconds, setSeconds] = useState(0);
     const [running, setRunning] = useState(false);
     const [intervalID, setIntervalID] = useState(null);
+
     useEffect(() => {
         if (running) {
-            console.log('im here');
             const id = window.setInterval(() => {
-                console.log('tick');
                 setSeconds(seconds => seconds+1);
             }, 1000);
             setIntervalID(id);
@@ -17,7 +17,7 @@ function App() {
             window.clearInterval(intervalID);
         }
     }, [running]);
-
+    document.title = seconds;
   return (
     <div className="App">
         <div className="Outer-circle"></div><div className="Inner-circle">
