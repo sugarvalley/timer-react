@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react";
-import {useDocTitle} from './customHooks';
 import './App.scss';
 
 function App() {
